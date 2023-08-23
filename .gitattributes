@@ -2,9 +2,42 @@
 # applies to directories without .gitattributes file
 # such as dir/
 
-# pattern attr1 attr2 ...
 
-# These are the same
-# / attr1 attr2#
-# / attr1 attr2    #
-#     / attr1 attr2#
+### TEXT
+# git add --renormalize .
+
+# normalizes line endings for all new files
+*           text=auto
+
+# normalization does not happen on checkin or checkout
+*           -text
+
+# This does not force normalization of text files, 
+# but does ensure that text files that you introduce to the 
+# repository have their line endings normalized to LF when they are added, 
+# and that files that are already normalized in the repository stay normalized.
+[core]
+	autocrlf=true
+# Git verifies if the conversion is reversible for the current setting of core.autocrlf
+# or warn
+    safecrlf=true 
+
+# unspecified line endings are overidden by core autocrlf
+*           !text
+
+# normalization by file type
+*.txt		text
+*.vcproj	text eol=crlf
+*.sh		text eol=lf
+*.jpg		-text
+
+#unset their text attribute before running git add -u
+manual.pdf	-text
+
+#normalization can be enabled manually
+weirdchars.txt	text
+
+
+### IDENT
+# Replaces $ID$ with commit hash in file 
+ident.txt       ident
