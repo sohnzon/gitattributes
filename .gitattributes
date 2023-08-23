@@ -40,4 +40,4 @@ weirdchars.txt	text
 
 ### IDENT
 # Replaces $ID$ with commit hash in file 
-ident.txt       ident
+*.txt       ident
