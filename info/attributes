@@ -1,0 +1,7 @@
+# This is the highest level of attributes file.
+
+# This file is meant to be used by users to override
+# the base level .gitattributes file.
+
+# This file and directory should not be checked in
+# .gitignore can have $GIT_DIR/info to exclude this

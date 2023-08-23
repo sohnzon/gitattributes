@@ -1,0 +1,10 @@
+# index level gitattributes file
+# applies to directories without .gitattributes file
+# such as dir/
+
+# pattern attr1 attr2 ...
+
+# These are the same
+# / attr1 attr2#
+# / attr1 attr2    #
+#     / attr1 attr2#
